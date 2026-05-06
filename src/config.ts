@@ -45,8 +45,6 @@ export const config = {
 
   // ----------------------------------------------------------
   // GOOGLE MAPS EMBED
-  // Ga naar maps.google.com → zoek "Larsa Haarsalon Bilthoven" →
-  // Delen → Een kaart insluiten → kopieer de src="..." URL
   // ----------------------------------------------------------
   googleMapsEmbedUrl:
     "https://maps.google.com/maps?cid=9963228248701041835&output=embed",
@@ -137,11 +135,11 @@ export const config = {
     { src: "/images/galerij/foto-4.jpg", alt: "Kleur en balayage resultaat" },
     { src: "/images/galerij/foto-5.jpg", alt: "Interieur Larsa Haarsalon Bilthoven" },
     { src: "/images/galerij/foto-6.jpg", alt: "Professionele haarverzorging" },
+    { src: "/images/galerij/foto-consultatie.jpg", alt: "Kleuradvies en consultatie bij Larsa" },
   ],
 
   // ----------------------------------------------------------
   // GOOGLE REVIEWS
-  // Voeg hier reviews toe of verwijder ze naar wens
   // ----------------------------------------------------------
   reviews: [
     {
