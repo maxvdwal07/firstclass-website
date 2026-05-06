@@ -1,0 +1,181 @@
+---
+import { config } from "../config";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const pageTitle = title ? `${title} | ${config.bedrijfsnaam}` : config.bedrijfsnaam;
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={config.beschrijving} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={config.bedrijfsnaam} />
+    <meta property="og:description" content={config.beschrijving} />
+    <meta property="og:image" content="/images/hero.jpg" />
+    <title>{pageTitle}</title>
+
+    <!-- Lettertypen via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Elfsight (Google Reviews widget) -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+    <style is:global>
+      *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --wit:        #ffffff;
+        --zwart:      #111111;
+        --grijs-licht: #f7f6f4;
+        --grijs-mid:   #e8e6e2;
+        --grijs-tekst: #555555;
+        --accent:      #111111;
+
+        --font-serif:  'Cormorant Garamond', Georgia, serif;
+        --font-sans:   'Inter', system-ui, sans-serif;
+
+        --sectie-padding: 7rem 2rem;
+        --max-breedte:    1080px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--wit);
+        color: var(--zwart);
+        line-height: 1.75;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ---- Herbruikbare klassen ---- */
+
+      .container {
+        max-width: var(--max-breedte);
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Sectietitels: CAPS, grote serif, veel spatiëring */
+      .sectie-label {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--grijs-tekst);
+        margin-bottom: 1.25rem;
+      }
+
+      .sectie-titel {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 3rem;
+      }
+
+      /* Zwarte CTA-knop — strak, geen afgeronde hoeken */
+      .boek-knop {
+        display: inline-block;
+        background-color: var(--zwart);
+        color: var(--wit);
+        padding: 1rem 2.8rem;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.25s, color 0.25s;
+      }
+
+      .boek-knop:hover {
+        background-color: var(--grijs-tekst);
+      }
+
+      /* Dunne scheidingslijn */
+      .lijn {
+        border: none;
+        border-top: 1px solid var(--grijs-mid);
+        margin: 0;
+      }
+
+      section {
+        padding: var(--sectie-padding);
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --sectie-padding: 4.5rem 1.25rem;
+        }
+      }
+
+      /* ---- Fade-up animatie bij scrollen ---- */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-up.zichtbaar {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      const waarnemer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("zichtbaar");
+              waarnemer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".fade-up").forEach((el) => waarnemer.observe(el));
+    </script>
+  </body>
+</html>

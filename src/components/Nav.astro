@@ -1,0 +1,205 @@
+---
+import { config, asset } from "../config";
+---
+
+<header>
+  <nav class="nav-inner container">
+
+    <a href="#home" class="nav-logo">
+      <img src={asset("/images/logo.png")} alt={config.bedrijfsnaam} class="logo-img" />
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#diensten">DIENSTEN</a></li>
+      <li><a href="#galerij">GALERIJ</a></li>
+      <li><a href="#over-ons">OVER ONS</a></li>
+      <li><a href="#reviews">REVIEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <!-- Boek nu knop (desktop) -->
+    <a
+      href={config.freshaLink}
+      target="_blank"
+      rel="noopener"
+      class="boek-knop nav-boek"
+    >
+      {config.hero.knopTekst}
+    </a>
+
+    <!-- Hamburger (mobiel) -->
+    <button class="hamburger" id="hamburger" aria-label="Menu openen">
+      <span></span>
+      <span></span>
+    </button>
+
+  </nav>
+
+  <!-- Mobiel menu -->
+  <div class="mobiel-menu" id="mobiel-menu">
+    <ul>
+      <li><a href="#diensten">DIENSTEN</a></li>
+      <li><a href="#galerij">GALERIJ</a></li>
+      <li><a href="#over-ons">OVER ONS</a></li>
+      <li><a href="#reviews">REVIEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <li>
+        <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+          {config.hero.knopTekst}
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e8e6e2;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 2rem;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--zwart);
+    position: relative;
+    padding-bottom: 3px;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--zwart);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .nav-boek {
+    flex-shrink: 0;
+    padding: 0.65rem 1.6rem;
+    font-size: 0.65rem;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: var(--zwart);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.open span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+  .hamburger.open span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  /* Mobiel menu */
+  .mobiel-menu {
+    display: none;
+    border-top: 1px solid #e8e6e2;
+    background-color: #ffffff;
+  }
+
+  .mobiel-menu.open {
+    display: block;
+  }
+
+  .mobiel-menu ul {
+    list-style: none;
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mobiel-menu a {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+  }
+
+  @media (max-width: 860px) {
+    .nav-links,
+    .nav-boek {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("mobiel-menu");
+
+  hamburger?.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    menu?.classList.toggle("open");
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger?.classList.remove("open");
+      menu.classList.remove("open");
+    });
+  });
+</script>

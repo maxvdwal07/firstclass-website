@@ -1,0 +1,111 @@
+---
+import { config, asset } from "../config";
+---
+
+<section id="over-ons">
+  <div class="container over-layout">
+
+    <div class="foto-kolom fade-up">
+      <div class="foto-wrapper">
+        <img
+          src={asset(config.overOns.foto)}
+          alt={config.overOns.fotoAlt}
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="tekst-kolom fade-up">
+      <p class="sectie-label">Ons verhaal</p>
+      <h2 class="sectie-titel" style="text-align: left; margin-bottom: 2rem;">
+        {config.overOns.titel.toUpperCase()}
+      </h2>
+
+      <div class="alineas">
+        {
+          config.overOns.tekst
+            .trim()
+            .split("\n\n")
+            .filter((p) => p.trim())
+            .map((alinea) => <p>{alinea.trim()}</p>)
+        }
+      </div>
+
+      <div class="tekst-cta">
+        <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+          {config.hero.knopTekst}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--grijs-licht);
+    padding: 0;
+  }
+
+  .over-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .foto-kolom {
+    overflow: hidden;
+  }
+
+  .foto-wrapper {
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tekst-kolom {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .alineas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .alineas p {
+    font-size: 0.95rem;
+    color: var(--grijs-tekst);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 900px) {
+    .over-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .foto-kolom {
+      order: 1;
+    }
+
+    .foto-wrapper {
+      min-height: 340px;
+    }
+
+    .tekst-kolom {
+      order: 2;
+      padding: 3.5rem 1.5rem;
+    }
+  }
+</style>

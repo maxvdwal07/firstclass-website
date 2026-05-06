@@ -1,0 +1,119 @@
+---
+import { config } from "../config";
+---
+
+<section id="diensten">
+  <div class="container">
+
+    <div class="sectie-header fade-up">
+      <p class="sectie-label">Wat wij bieden</p>
+      <h2 class="sectie-titel">Diensten & Prijzen</h2>
+    </div>
+
+    <p class="prijstoelichting fade-up">
+      Onze prijzen zijn v.a. tarieven. Het exacte bedrag is afhankelijk van de haarlengte en het ervaringsniveau van de stylist.
+    </p>
+
+    <div class="diensten-lijst fade-up">
+      {
+        config.diensten.map((dienst) => (
+          <div class="dienst-rij">
+            <div class="dienst-info">
+              <h3>{dienst.naam.toUpperCase()}</h3>
+              <p>{dienst.beschrijving}</p>
+            </div>
+            <span class="prijs">{dienst.prijs}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="cta">
+      <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+        {config.hero.knopTekst}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--grijs-licht);
+  }
+
+  .sectie-header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .sectie-header .sectie-titel {
+    margin-bottom: 0;
+  }
+
+  .prijstoelichting {
+    max-width: 780px;
+    margin: 0 auto 2rem;
+    font-size: 0.85rem;
+    color: var(--grijs-tekst);
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .diensten-lijst {
+    max-width: 780px;
+    margin: 0 auto;
+    border-top: 1px solid var(--grijs-mid);
+  }
+
+  .dienst-rij {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--grijs-mid);
+  }
+
+  .dienst-info h3 {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.45rem;
+  }
+
+  .dienst-info p {
+    font-size: 0.9rem;
+    color: var(--grijs-tekst);
+    font-weight: 300;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  .prijs {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    .dienst-rij {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .prijs {
+      font-size: 1rem;
+    }
+  }
+</style>

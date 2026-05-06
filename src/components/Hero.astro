@@ -1,0 +1,147 @@
+---
+import { config, asset } from "../config";
+---
+
+<section id="home" class="hero">
+  <div
+    class="hero-foto"
+    style={`background-image: url('${asset(config.hero.achtergrondAfbeelding)}')`}
+    role="img"
+    aria-label={`${config.bedrijfsnaam} — ${config.tagline}`}
+  ></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-tekst">
+    <p class="hero-label">{config.stad}</p>
+    <h1>{config.bedrijfsnaam.toUpperCase()}</h1>
+    <p class="hero-tagline">{config.tagline}</p>
+    <a
+      href={config.freshaLink}
+      target="_blank"
+      rel="noopener"
+      class="boek-knop hero-knop"
+    >
+      {config.hero.knopTekst}
+    </a>
+  </div>
+
+  <!-- Scroll-indicator -->
+  <div class="scroll-pijl" aria-hidden="true">
+    <span></span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero-foto {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 30%;
+    background-color: #222;
+    transform: scale(1.04);
+    transition: transform 8s ease-out;
+  }
+
+  .hero:hover .hero-foto {
+    transform: scale(1);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.18) 0%,
+      rgba(0,0,0,0.52) 60%,
+      rgba(0,0,0,0.68) 100%
+    );
+  }
+
+  .hero-tekst {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    padding: 0 1.5rem;
+    max-width: 780px;
+  }
+
+  .hero-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.85;
+    margin-bottom: 3rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Lichte variant van de knop op donkere achtergrond */
+  .hero-knop {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.8);
+    color: #ffffff;
+    letter-spacing: 0.25em;
+    transition: background-color 0.25s, border-color 0.25s;
+  }
+
+  .hero-knop:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--zwart);
+  }
+
+  /* Scroll-pijltje onderaan */
+  .scroll-pijl {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .scroll-pijl span {
+    display: block;
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.7));
+    margin: 0 auto;
+    animation: scroll-lijn 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-lijn {
+    0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    50%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+  }
+</style>

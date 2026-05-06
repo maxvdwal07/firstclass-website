@@ -1,0 +1,181 @@
+---
+import { config } from "../config";
+---
+
+<section id="contact">
+  <div class="container">
+
+    <div class="sectie-header">
+      <p class="sectie-label">Kom langs</p>
+      <h2 class="sectie-titel">Contact & Openingstijden</h2>
+    </div>
+
+    <div class="contact-layout fade-up">
+
+      <!-- Links: info -->
+      <div class="info-kolom">
+
+        <div class="info-blok">
+          <p class="info-label">ADRES</p>
+          <p>
+            {config.adres}<br />
+            {config.postcode} {config.stad}
+          </p>
+        </div>
+
+        <div class="info-blok">
+          <p class="info-label">TELEFOON</p>
+          <p>
+            <a href={`tel:${config.telefoon.replace(/[\s-]/g, "")}`}>
+              {config.telefoon}
+            </a>
+          </p>
+        </div>
+
+        <div class="info-blok">
+          <p class="info-label">E-MAIL</p>
+          <p>
+            <a href={`mailto:${config.email}`}>{config.email}</a>
+          </p>
+        </div>
+
+        <div class="info-blok">
+          <p class="info-label">OPENINGSTIJDEN</p>
+          <table class="tijden">
+            {
+              config.openingstijden.map((rij) => (
+                <tr class={rij.tijd === "Gesloten" ? "gesloten" : ""}>
+                  <td class="dag">{rij.dag}</td>
+                  <td class="tijd">{rij.tijd}</td>
+                </tr>
+              ))
+            }
+          </table>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+            {config.hero.knopTekst}
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Rechts: kaart -->
+      <div class="kaart-kolom">
+        <iframe
+          src={config.googleMapsEmbedUrl}
+          title={`Locatie ${config.bedrijfsnaam} op Google Maps`}
+          allowfullscreen={true}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--grijs-licht);
+  }
+
+  .sectie-header {
+    text-align: center;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .info-blok {
+    margin-bottom: 2.25rem;
+  }
+
+  .info-label {
+    font-family: var(--font-sans);
+    font-size: 0.63rem;
+    letter-spacing: 0.22em;
+    color: var(--grijs-tekst);
+    margin-bottom: 0.6rem;
+  }
+
+  .info-kolom p,
+  .info-kolom a {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--zwart);
+  }
+
+  .info-kolom a:hover {
+    opacity: 0.55;
+    transition: opacity 0.2s;
+  }
+
+  /* Openingstijdentabel */
+  .tijden {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .tijden tr {
+    border-bottom: 1px solid var(--grijs-mid);
+  }
+
+  .tijden td {
+    padding: 0.55rem 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  .tijden .dag {
+    width: 130px;
+    color: var(--zwart);
+  }
+
+  .tijden .tijd {
+    color: var(--grijs-tekst);
+  }
+
+  .gesloten .tijd {
+    color: #c0bdb8;
+  }
+
+  /* Boek-knop override — expliciete kleuren zodat hij altijd leesbaar is */
+  .info-kolom .boek-knop {
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    display: inline-block;
+  }
+
+  .info-kolom .boek-knop:hover {
+    background-color: #444444;
+    color: #ffffff;
+  }
+
+  /* Kaart */
+  .kaart-kolom iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
+    display: block;
+    filter: grayscale(20%);
+  }
+
+  @media (max-width: 860px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .kaart-kolom iframe {
+      height: 300px;
+    }
+  }
+</style>

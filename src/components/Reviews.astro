@@ -1,0 +1,193 @@
+---
+import { config } from "../config";
+
+const googleMapsUrl = "https://maps.google.com/?cid=9963228248701041835";
+---
+
+<section id="reviews">
+  <div class="container">
+
+    <div class="sectie-header fade-up">
+      <p class="sectie-label">Ervaringen</p>
+      <h2 class="sectie-titel">Wat onze klanten zeggen</h2>
+    </div>
+
+    <!-- Sterrengemiddelde -->
+    <div class="gemiddelde">
+      <div class="sterren-groot">
+        {"★".repeat(5)}
+      </div>
+      <p class="score-tekst">4,5 op Google · 64 beoordelingen</p>
+    </div>
+
+    <!-- Review kaarten -->
+    <div class="reviews-grid fade-up">
+      {config.reviews.map((review) => (
+        <a href={googleMapsUrl} target="_blank" rel="noopener" class="review-kaart">
+          <div class="review-top">
+            <div class="avatar">{review.naam.charAt(0)}</div>
+            <div class="reviewer-info">
+              <p class="reviewer-naam">{review.naam}</p>
+              <p class="reviewer-datum">{review.datum}</p>
+            </div>
+            <div class="sterren">
+              {"★".repeat(review.sterren)}{"☆".repeat(5 - review.sterren)}
+            </div>
+          </div>
+          <p class="review-tekst">"{review.tekst}"</p>
+          <span class="google-label">Bekijk op Google ↗</span>
+        </a>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="reviews-cta">
+      <a href={googleMapsUrl} target="_blank" rel="noopener" class="boek-knop outline-knop">
+        ALLE REVIEWS OP GOOGLE
+      </a>
+      <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+        {config.hero.knopTekst}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--grijs-licht);
+  }
+
+  .sectie-header {
+    text-align: center;
+  }
+
+  .gemiddelde {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: -1rem;
+  }
+
+  .sterren-groot {
+    font-size: 1.8rem;
+    color: #c8a84b;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .score-tekst {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: var(--grijs-tekst);
+    text-transform: uppercase;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .review-kaart {
+    background-color: #ffffff;
+    padding: 2rem;
+    border: 1px solid var(--grijs-mid);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .review-kaart:hover {
+    border-color: var(--zwart);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .review-top {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--zwart);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .reviewer-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .reviewer-naam {
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .reviewer-datum {
+    font-size: 0.75rem;
+    color: var(--grijs-tekst);
+    margin-top: 0.1rem;
+  }
+
+  .sterren {
+    font-size: 0.9rem;
+    color: #c8a84b;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .review-tekst {
+    font-size: 0.88rem;
+    color: var(--grijs-tekst);
+    font-weight: 300;
+    line-height: 1.75;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .google-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grijs-tekst);
+    margin-top: auto;
+  }
+
+  .review-kaart:hover .google-label {
+    color: var(--zwart);
+  }
+
+  .reviews-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .outline-knop {
+    background-color: transparent;
+    border: 1px solid var(--zwart);
+    color: var(--zwart);
+  }
+
+  .outline-knop:hover {
+    background-color: var(--zwart);
+    color: #ffffff;
+  }
+</style>
