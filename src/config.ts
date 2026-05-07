@@ -134,13 +134,10 @@ export const config = {
   // Zet je foto's in de map public/images/galerij/
   // ----------------------------------------------------------
   galerij: [
-    { src: "/images/galerij/foto-1.jpg", alt: "Styling en verzorging bij FirstClass" },
-    { src: "/images/galerij/foto-2.jpg", alt: "Knipbeurt resultaat" },
-    { src: "/images/galerij/foto-3.jpg", alt: "Consultatie bij FirstClass Hair & Beauty" },
-    { src: "/images/galerij/foto-4.jpg", alt: "Kleur en balayage resultaat" },
-    { src: "/images/galerij/foto-5.jpg", alt: "Interieur FirstClass Hair & Beauty Amersfoort" },
-    { src: "/images/galerij/foto-6.jpg", alt: "Professionele haarverzorging" },
-    { src: "/images/galerij/foto-consultatie.jpg", alt: "Kleuradvies en consultatie bij FirstClass" },
+    { src: "/images/galerij/foto-1.jpg", alt: "Platinum blonde balayage resultaat bij FirstClass" },
+    { src: "/images/galerij/foto-2.jpg", alt: "Steil blond balayage haar bij FirstClass Amersfoort" },
+    { src: "/images/galerij/foto-3.jpg", alt: "Lange bruine krullen met caramel highlights" },
+    { src: "/images/galerij/foto-4.jpg", alt: "Blonde balayage styling bij FirstClass Hair & Beauty" },
   ],
 
   // ----------------------------------------------------------
