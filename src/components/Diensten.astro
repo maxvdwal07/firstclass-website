@@ -29,9 +29,13 @@ import { config } from "../config";
     </div>
 
     <div class="cta">
-      <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+      <button
+        class="boek-knop"
+        data-fresha-widget
+        data-url={`https://widget.fresha.com/appointments/stores/firstclass-hair-beauty/${config.freshaWidgetId}/add-service`}
+      >
         {config.hero.knopTekst}
-      </a>
+      </button>
     </div>
 
   </div>

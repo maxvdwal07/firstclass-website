@@ -1,7 +1,7 @@
 ---
 import { config } from "../config";
 
-const googleMapsUrl = "https://maps.google.com/?cid=9963228248701041835";
+const googleMapsUrl = "https://www.google.com/maps/search/FirstClass+Hair+%26+Beauty+Van+Randwijcklaan+93+Amersfoort";
 ---
 
 <section id="reviews">
@@ -17,7 +17,7 @@ const googleMapsUrl = "https://maps.google.com/?cid=9963228248701041835";
       <div class="sterren-groot">
         {"★".repeat(5)}
       </div>
-      <p class="score-tekst">4,5 op Google · 64 beoordelingen</p>
+      <p class="score-tekst">5,0 op Google · bekijk alle beoordelingen</p>
     </div>
 
     <!-- Review kaarten -->
@@ -45,9 +45,13 @@ const googleMapsUrl = "https://maps.google.com/?cid=9963228248701041835";
       <a href={googleMapsUrl} target="_blank" rel="noopener" class="boek-knop outline-knop">
         ALLE REVIEWS OP GOOGLE
       </a>
-      <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop">
+      <button
+        class="boek-knop"
+        data-fresha-widget
+        data-url={`https://widget.fresha.com/appointments/stores/firstclass-hair-beauty/${config.freshaWidgetId}/add-service`}
+      >
         {config.hero.knopTekst}
-      </a>
+      </button>
     </div>
 
   </div>

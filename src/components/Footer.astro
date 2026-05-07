@@ -12,9 +12,13 @@ const jaar = new Date().getFullYear();
         <img src={asset("/images/logo.png")} alt={config.bedrijfsnaam} class="footer-logo-img" />
       </a>
 
-      <a href={config.freshaLink} target="_blank" rel="noopener" class="boek-knop footer-boek">
+      <button
+        class="boek-knop footer-boek"
+        data-fresha-widget
+        data-url={`https://widget.fresha.com/appointments/stores/firstclass-hair-beauty/${config.freshaWidgetId}/add-service`}
+      >
         {config.hero.knopTekst}
-      </a>
+      </button>
     </div>
 
     <hr class="lijn footer-lijn" />

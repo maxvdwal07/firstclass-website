@@ -145,14 +145,30 @@ export const config = {
 
   // ----------------------------------------------------------
   // GOOGLE REVIEWS
-  // TODO: Vervang door reviews van FirstClass zodra die beschikbaar zijn.
-  // ----------------------------------------------------------
   reviews: [
     {
-      naam: "Tevredenheid gegarandeerd",
-      datum: "",
+      naam: "Merve Uyar",
+      datum: "11 maanden geleden",
       sterren: 5,
-      tekst: "Reviews worden binnenkort toegevoegd. Volg ons op Instagram en Facebook voor de nieuwste updates!",
+      tekst: "Ik heb mijn keratinebehandeling laten doen bij First Class en ik ben echt superblij! Mijn haar voelt heerlijk zacht en makkelijk in gebruik. Iedereen was onder de indruk van de glans. Ik kan deze salon en behandeling dan ook van harte aanbevelen!",
+    },
+    {
+      naam: "Ibtissam Aboyaakoub",
+      datum: "8 maanden geleden",
+      sterren: 5,
+      tekst: "Ik ben he-le-maaaal obsessed met mijn haar. Vandaag geweest voor een keratine behandeling, echt een top salon! Zeker een aanrader!!",
+    },
+    {
+      naam: "Aleyna A",
+      datum: "6 jaar geleden",
+      sterren: 5,
+      tekst: "Een aanrader! Super service, klantvriendelijk en een super mooi resultaat van mijn haar. Ik heb voor het eerst mijn haren laten verven en gelukkig heb ik dit bij de juiste kapper laten doen. Ben er super blij mee!",
+    },
+    {
+      naam: "Gun Hanna",
+      datum: "10 maanden geleden",
+      sterren: 5,
+      tekst: "Wat mij erg opvalt is dat je bij deze kapper oprecht rust voelt — een momentje voor jezelf. Geen chaos, professionaliteit staat vooraan. Ik ben met beschadigd haar gegaan en heb keratine behandeling genomen. Super blij mee. Echt aanrader én super schappelijke prijzen voor goede kwaliteit!",
     },
   ],
 
