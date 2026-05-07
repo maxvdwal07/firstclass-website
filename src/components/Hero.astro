@@ -14,7 +14,6 @@ import { config, asset } from "../config";
   <div class="hero-tekst">
     <img src={asset("/images/logo.png")} alt={config.bedrijfsnaam} class="hero-logo" />
     <p class="hero-label">{config.stad}</p>
-    <h1>{config.bedrijfsnaam.toUpperCase()}</h1>
     <p class="hero-tagline">{config.tagline}</p>
 
     {/* TODO: Vervang FRESHA_WIDGET_ID_HIER door het echte widget-ID van de klant */}
@@ -81,11 +80,12 @@ import { config, asset } from "../config";
   }
 
   .hero-logo {
-    width: 140px;
-    height: 140px;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
     margin: 0 auto 1.5rem;
     display: block;
+    mix-blend-mode: screen;
   }
 
   .hero-label {
@@ -95,15 +95,6 @@ import { config, asset } from "../config";
     text-transform: uppercase;
     opacity: 0.75;
     margin-bottom: 1.25rem;
-  }
-
-  h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 9vw, 6.5rem);
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    line-height: 1;
-    margin-bottom: 1.5rem;
   }
 
   .hero-tagline {
@@ -116,7 +107,6 @@ import { config, asset } from "../config";
     letter-spacing: 0.04em;
   }
 
-  /* Lichte variant van de knop op donkere achtergrond */
   .hero-knop {
     background-color: transparent;
     border: 1px solid rgba(255,255,255,0.8);
@@ -131,7 +121,6 @@ import { config, asset } from "../config";
     color: #ffffff;
   }
 
-  /* Scroll-pijltje onderaan */
   .scroll-pijl {
     position: absolute;
     bottom: 2.5rem;
