@@ -19,14 +19,16 @@ import { config, asset } from "../config";
   </div>
 
   <div class="container cta">
-    <a
-      href={config.socials.instagram}
-      target="_blank"
-      rel="noopener"
-      class="boek-knop"
-    >
-      {config.socials.instagram ? "VOLG ONS OP INSTAGRAM" : config.hero.knopTekst}
-    </a>
+    {config.socials.instagram && (
+      <a href={config.socials.instagram} target="_blank" rel="noopener" class="boek-knop outline-knop">
+        VOLG ONS OP INSTAGRAM
+      </a>
+    )}
+    {config.socials.facebook && (
+      <a href={config.socials.facebook} target="_blank" rel="noopener" class="boek-knop">
+        VOLG ONS OP FACEBOOK
+      </a>
+    )}
   </div>
 </section>
 
@@ -80,7 +82,21 @@ import { config, asset } from "../config";
   }
 
   .cta {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .outline-knop {
+    background-color: transparent;
+    border: 1px solid var(--zwart);
+    color: var(--zwart);
+  }
+
+  .outline-knop:hover {
+    background-color: var(--zwart);
+    color: #ffffff;
   }
 
   @media (max-width: 768px) {
