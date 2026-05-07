@@ -167,6 +167,18 @@ export const config = {
       sterren: 5,
       tekst: "Wat mij erg opvalt is dat je bij deze kapper oprecht rust voelt — een momentje voor jezelf. Geen chaos, professionaliteit staat vooraan. Ik ben met beschadigd haar gegaan en heb keratine behandeling genomen. Super blij mee. Echt aanrader én super schappelijke prijzen voor goede kwaliteit!",
     },
+    {
+      naam: "Meron Wolde",
+      datum: "6 maanden geleden",
+      sterren: 5,
+      tekst: "Ik heb ong. twee weken geleden mijn haar laten verven, zij heeft het super mooi gedaan! Ik moest eerst wennen aan mijn nieuwe haarkleur maar nu heb ik er elke dag plezier van. Ik heb kroes haar, zij heeft het goed behandeld. Dankjewel! Ik raad dit salon zeker aan!",
+    },
+    {
+      naam: "Sabine Bleijenberg",
+      datum: "2 jaar geleden",
+      sterren: 5,
+      tekst: "Wat een fantastische meid! Ik kom met veel plezier bij First Class. De salon is schoon en ik ben al jaren vaste klant omdat de prijs verhoudingen met kwaliteit perfect is. Daarnaast is het ook erg gezellig dus ik kom er met veel plezier!",
+    },
   ],
 
   // ----------------------------------------------------------
