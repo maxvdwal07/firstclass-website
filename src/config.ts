@@ -14,7 +14,7 @@ export const config = {
   // ----------------------------------------------------------
   bedrijfsnaam: "FirstClass Hair & Beauty",
   tagline: "Jouw specialist in haar & beauty",
-  beschrijving: "FirstClass Hair & Beauty in Amersfoort — jouw premium kapsalon voor knippen, kleuren, extensions en beautybehandelingen. Maak eenvoudig online een afspraak.",
+  beschrijving: "FirstClass Hair & Beauty in Amersfoort — specialist in knippen, balayage, keratine behandeling, extensions en vlechten. Voor dames, heren & kinderen. Maak eenvoudig een afspraak.",
 
   // ----------------------------------------------------------
   // FRESHA WIDGET
@@ -70,17 +70,17 @@ export const config = {
   diensten: [
     {
       naam:        "Knippen",
-      beschrijving: "Voor dames, heren & kinderen — professioneel geknipt door onze ervaren stylisten.",
+      beschrijving: "Voor dames, heren & kinderen — professioneel geknipt door onze ervaren stylisten — dé kapper in Amersfoort voor het hele gezin.",
       prijs:       "",
     },
     {
       naam:        "Balayage & Highlights",
-      beschrijving: "Natuurlijke kleurovergang op maat, handgeschilderd voor een stralend resultaat.",
+      beschrijving: "Natuurlijke kleurovergang op maat, handgeschilderd voor een stralend resultaat — natuurlijke balayage specialist in Amersfoort.",
       prijs:       "",
     },
     {
       naam:        "Keratine behandeling",
-      beschrijving: "Glad, zijdezacht haar tot 6 maanden — intensieve gladmakende treatment.",
+      beschrijving: "Glad, zijdezacht haar tot 6 maanden — intensieve gladmakende treatment — keratine behandeling Amersfoort.",
       prijs:       "",
     },
     {
@@ -116,7 +116,7 @@ export const config = {
   overOns: {
     titel: "Over ons",
     tekst: `
-      Welkom bij FirstClass Hair & Beauty — jouw premium kapsalon in het hart van Amersfoort.
+      Welkom bij FirstClass Hair & Beauty — jouw kapsalon in Amersfoort voor haar & beauty. Gevestigd aan de Van Randwijcklaan, dé plek voor balayage, keratine behandelingen, extensions en meer.
       Wij zijn een team van gepassioneerde stylisten die voor elk haar­type en elke gelegenheid klaarstaan.
 
       Of je nu komt voor een verfijnde knipbeurt, een prachtige balayage, sterkende Olaplex-behandeling
