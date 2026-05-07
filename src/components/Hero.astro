@@ -12,6 +12,7 @@ import { config, asset } from "../config";
   <div class="hero-overlay"></div>
 
   <div class="hero-tekst">
+    <img src={asset("/images/logo-wit.png")} alt={config.bedrijfsnaam} class="hero-logo" />
     <p class="hero-label">{config.stad}</p>
     <h1>{config.bedrijfsnaam.toUpperCase()}</h1>
     <p class="hero-tagline">{config.tagline}</p>
@@ -77,6 +78,14 @@ import { config, asset } from "../config";
     color: #ffffff;
     padding: 0 1.5rem;
     max-width: 780px;
+  }
+
+  .hero-logo {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    display: block;
   }
 
   .hero-label {
