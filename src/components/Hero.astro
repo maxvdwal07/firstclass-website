@@ -15,14 +15,15 @@ import { config, asset } from "../config";
     <p class="hero-label">{config.stad}</p>
     <h1>{config.bedrijfsnaam.toUpperCase()}</h1>
     <p class="hero-tagline">{config.tagline}</p>
-    <a
-      href={config.freshaLink}
-      target="_blank"
-      rel="noopener"
+
+    {/* TODO: Vervang FRESHA_WIDGET_ID_HIER door het echte widget-ID van de klant */}
+    <button
       class="boek-knop hero-knop"
+      data-fresha-widget
+      data-url={`https://widget.fresha.com/appointments/stores/firstclass-hair-beauty/${config.freshaWidgetId}/add-service`}
     >
       {config.hero.knopTekst}
-    </a>
+    </button>
   </div>
 
   <!-- Scroll-indicator -->
@@ -112,13 +113,13 @@ import { config, asset } from "../config";
     border: 1px solid rgba(255,255,255,0.8);
     color: #ffffff;
     letter-spacing: 0.25em;
-    transition: background-color 0.25s, border-color 0.25s;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s;
   }
 
   .hero-knop:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: var(--zwart);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
   }
 
   /* Scroll-pijltje onderaan */

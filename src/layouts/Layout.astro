@@ -33,6 +33,9 @@ const pageTitle = title ? `${title} | ${config.bedrijfsnaam}` : config.bedrijfsn
     <!-- Elfsight (Google Reviews widget) -->
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
 
+    <!-- Fresha booking widget -->
+    <script src="https://widget.fresha.com/assets/embed/v2/fresha-widget.js" defer></script>
+
     <style is:global>
       *, *::before, *::after {
         margin: 0;
@@ -42,11 +45,11 @@ const pageTitle = title ? `${title} | ${config.bedrijfsnaam}` : config.bedrijfsn
 
       :root {
         --wit:        #ffffff;
-        --zwart:      #111111;
+        --zwart:      #1a1a1a;
         --grijs-licht: #f7f6f4;
         --grijs-mid:   #e8e6e2;
         --grijs-tekst: #555555;
-        --accent:      #111111;
+        --accent:      #c9a96e;
 
         --font-serif:  'Cormorant Garamond', Georgia, serif;
         --font-sans:   'Inter', system-ui, sans-serif;
@@ -126,7 +129,7 @@ const pageTitle = title ? `${title} | ${config.bedrijfsnaam}` : config.bedrijfsn
       }
 
       .boek-knop:hover {
-        background-color: var(--grijs-tekst);
+        background-color: var(--accent);
       }
 
       /* Dunne scheidingslijn */

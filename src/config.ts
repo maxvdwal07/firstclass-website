@@ -12,49 +12,54 @@ export const config = {
   // ----------------------------------------------------------
   // ALGEMENE BEDRIJFSGEGEVENS
   // ----------------------------------------------------------
-  bedrijfsnaam: "Larsa Haarsalon & Beauty",
-  tagline: "Krijg De Nieuwe Look",
-  beschrijving: "Larsa Haarsalon & Beauty in Bilthoven — een rustig en ontspannen toevluchtsoord voor dames en heren. Ervaar prestige kappersvaardigheden en uitzonderlijke klantenservice.",
+  bedrijfsnaam: "FirstClass Hair & Beauty",
+  tagline: "Jouw specialist in haar & beauty",
+  beschrijving: "FirstClass Hair & Beauty in Amersfoort — jouw premium kapsalon voor knippen, kleuren, extensions en beautybehandelingen. Maak eenvoudig online een afspraak.",
 
   // ----------------------------------------------------------
-  // BOEKLINK
+  // FRESHA WIDGET
+  // TODO: Vul hier het widget-ID in zodra de klant hun Fresha-account heeft aangemaakt.
+  // Stap 1: Log in op https://partners.fresha.com
+  // Stap 2: Ga naar Marketing → Book-knop → Embed-code kopiëren
+  // Stap 3: Haal het widget-ID uit de embed-URL en plak het hieronder.
   // ----------------------------------------------------------
-  freshaLink: "https://larsahaarsalon.setmore.com",
+  freshaWidgetId: "FRESHA_WIDGET_ID_HIER",
 
   // ----------------------------------------------------------
   // CONTACTGEGEVENS
   // ----------------------------------------------------------
-  adres: "Bilderdijklaan 108",
-  stad: "Bilthoven",
-  postcode: "3723 DE",
-  telefoon: "030 269 0145",
-  email: "larsahaarsalon@hotmail.com",
+  adres: "Van Randwijcklaan 93",
+  stad: "Amersfoort",
+  postcode: "3814 AE",
+  telefoon: "06 85053172",
+  email: "info@firstclassalon.nl",
 
   // ----------------------------------------------------------
   // OPENINGSTIJDEN
   // ----------------------------------------------------------
   openingstijden: [
     { dag: "Maandag",   tijd: "Gesloten" },
-    { dag: "Dinsdag",   tijd: "09:00 – 18:00" },
-    { dag: "Woensdag",  tijd: "09:00 – 18:00" },
-    { dag: "Donderdag", tijd: "09:00 – 17:30" },
-    { dag: "Vrijdag",   tijd: "09:00 – 18:00" },
-    { dag: "Zaterdag",  tijd: "09:00 – 17:30" },
+    { dag: "Dinsdag",   tijd: "09:30 – 18:00" },
+    { dag: "Woensdag",  tijd: "09:30 – 18:00" },
+    { dag: "Donderdag", tijd: "09:30 – 18:00" },
+    { dag: "Vrijdag",   tijd: "09:30 – 20:00" },
+    { dag: "Zaterdag",  tijd: "09:30 – 17:00" },
     { dag: "Zondag",    tijd: "Gesloten" },
   ],
 
   // ----------------------------------------------------------
   // GOOGLE MAPS EMBED
+  // TODO: Vervang door de echte embed-URL van FirstClass (Google Maps → Delen → Insluiten)
   // ----------------------------------------------------------
   googleMapsEmbedUrl:
-    "https://maps.google.com/maps?cid=9963228248701041835&output=embed",
+    "https://maps.google.com/maps?q=Van+Randwijcklaan+93,+3814+AE+Amersfoort&output=embed",
 
   // ----------------------------------------------------------
   // SOCIALE MEDIA
   // ----------------------------------------------------------
   socials: {
-    instagram: "https://www.instagram.com/larsahairandbeauty/",
-    facebook:  "https://www.facebook.com/kawther.jaber.731",
+    instagram: "https://www.instagram.com/firstclassalon/",
+    facebook:  "https://www.facebook.com/FirstClassalon/",
     tiktok:    "",
     whatsapp:  "",
   },
@@ -64,44 +69,44 @@ export const config = {
   // ----------------------------------------------------------
   diensten: [
     {
-      naam:        "Knippen dames",
-      beschrijving: "Wassen, knippen en föhnen door onze ervaren stylisten. Prijs afhankelijk van lengte en stylist.",
-      prijs:       "v.a. € 33,50",
+      naam:        "Knippen",
+      beschrijving: "Voor dames, heren & kinderen — professioneel geknipt door onze ervaren stylisten.",
+      prijs:       "",
     },
     {
-      naam:        "Knippen heren",
-      beschrijving: "Stijlvolle knipbeurt inclusief wassen en stylen, afgestemd op jouw wensen.",
-      prijs:       "v.a. € 27,50",
-    },
-    {
-      naam:        "Knippen kinderen",
-      beschrijving: "Vrolijke knipbeurt voor jongens en meisjes tot 10 jaar.",
-      prijs:       "v.a. € 18,50",
-    },
-    {
-      naam:        "Highlights & Balayage",
-      beschrijving: "Van klassieke highlights tot handgeschilderde balayage voor een natuurlijk, stralend resultaat.",
-      prijs:       "v.a. € 47",
+      naam:        "Balayage & Highlights",
+      beschrijving: "Natuurlijke kleurovergang op maat, handgeschilderd voor een stralend resultaat.",
+      prijs:       "",
     },
     {
       naam:        "Keratine behandeling",
-      beschrijving: "Intensieve gladmakende behandeling voor glanzend en gemakkelijk te stylen haar.",
-      prijs:       "v.a. € 170",
+      beschrijving: "Glad, zijdezacht haar tot 6 maanden — intensieve gladmakende treatment.",
+      prijs:       "",
     },
     {
-      naam:        "Olaplex behandeling",
-      beschrijving: "Herstellende behandeling die de haarstructuur van binnenuit versterkt en beschermt.",
-      prijs:       "v.a. € 12",
+      naam:        "Hair Extensions",
+      beschrijving: "Volume en lengte toevoegen met kwalitatieve extensions op maat.",
+      prijs:       "",
     },
     {
-      naam:        "Wenkbrauwen & wimpers",
-      beschrijving: "Wenkbrauwthreading, -verven, lash lifting en meer voor een strakke, verzorgde uitstraling.",
-      prijs:       "v.a. € 12",
+      naam:        "Vlechten",
+      beschrijving: "Diverse vlecht- en stijltechnieken voor elk haar- en gelegenheidstype.",
+      prijs:       "",
     },
     {
-      naam:        "Bruidsstyling",
-      beschrijving: "Compleet bruidsarrangement inclusief haar en make-up — voor de mooiste dag van je leven.",
-      prijs:       "v.a. € 250",
+      naam:        "Olaplex",
+      beschrijving: "Reparatie en bescherming van beschadigd haar — versterkt de haarstructuur van binnenuit.",
+      prijs:       "",
+    },
+    {
+      naam:        "Permanent",
+      beschrijving: "Duurzame krul- of stijlbehandeling voor langdurig resultaat.",
+      prijs:       "",
+    },
+    {
+      naam:        "Epileren & Waxen",
+      beschrijving: "Professionele gezichts­ontharing voor een strakke, verzorgde uitstraling.",
+      prijs:       "",
     },
   ],
 
@@ -111,17 +116,17 @@ export const config = {
   overOns: {
     titel: "Over ons",
     tekst: `
-      Welkom bij Larsa Haarsalon & Beauty — een rustig en ontspannen toevluchtsoord in het hart van Bilthoven.
-      Wij zijn een team van haarontwerpers met een passie voor vakmanschap en een oog voor detail.
+      Welkom bij FirstClass Hair & Beauty — jouw premium kapsalon in het hart van Amersfoort.
+      Wij zijn een team van gepassioneerde stylisten die voor elk haar­type en elke gelegenheid klaarstaan.
 
-      Kawther, onze hoofdstyliste met meer dan 12 jaar ervaring in knippen, kleuren en stylen, staat samen met haar team voor je klaar.
-      Of je nu komt voor een verfrissende knipbeurt, een prachtige balayage of een complete beautybehandeling — bij Larsa ben je in uitstekende handen.
+      Of je nu komt voor een verfijnde knipbeurt, een prachtige balayage, sterkende Olaplex-behandeling
+      of luxe hair extensions — bij FirstClass Hair & Beauty ben je in uitstekende handen.
 
-      Wij werken uitsluitend met premium merken zoals Keune, Alter Ego en Olaplex voor het beste resultaat.
-      Ons salon beschikt over een aparte damesruimte, gratis parkeren en is bereikbaar in het Nederlands, Engels en Arabisch.
+      Wij werken met premium producten en nemen de tijd voor een persoonlijk adviesgesprek,
+      zodat jij de salon verlaat zoals je je altijd al wilde voelen: FirstClass.
     `,
     foto: "/images/over-ons.jpg",
-    fotoAlt: "Interieur van Larsa Haarsalon & Beauty in Bilthoven",
+    fotoAlt: "Interieur van FirstClass Hair & Beauty in Amersfoort",
   },
 
   // ----------------------------------------------------------
@@ -129,54 +134,25 @@ export const config = {
   // Zet je foto's in de map public/images/galerij/
   // ----------------------------------------------------------
   galerij: [
-    { src: "/images/galerij/foto-1.jpg", alt: "Styling en verzorging bij Larsa" },
+    { src: "/images/galerij/foto-1.jpg", alt: "Styling en verzorging bij FirstClass" },
     { src: "/images/galerij/foto-2.jpg", alt: "Knipbeurt resultaat" },
-    { src: "/images/galerij/foto-3.jpg", alt: "Consultatie bij Larsa Haarsalon" },
+    { src: "/images/galerij/foto-3.jpg", alt: "Consultatie bij FirstClass Hair & Beauty" },
     { src: "/images/galerij/foto-4.jpg", alt: "Kleur en balayage resultaat" },
-    { src: "/images/galerij/foto-5.jpg", alt: "Interieur Larsa Haarsalon Bilthoven" },
+    { src: "/images/galerij/foto-5.jpg", alt: "Interieur FirstClass Hair & Beauty Amersfoort" },
     { src: "/images/galerij/foto-6.jpg", alt: "Professionele haarverzorging" },
-    { src: "/images/galerij/foto-consultatie.jpg", alt: "Kleuradvies en consultatie bij Larsa" },
+    { src: "/images/galerij/foto-consultatie.jpg", alt: "Kleuradvies en consultatie bij FirstClass" },
   ],
 
   // ----------------------------------------------------------
   // GOOGLE REVIEWS
+  // TODO: Vervang door reviews van FirstClass zodra die beschikbaar zijn.
   // ----------------------------------------------------------
   reviews: [
     {
-      naam: "Vanja Opsteeg-Wentink",
-      datum: "december 2025",
+      naam: "Tevredenheid gegarandeerd",
+      datum: "",
       sterren: 5,
-      tekst: "Vanuit Brabant hier gekomen en zó tevreden dat ik een vast klant zal worden! Fijne sfeer, lieve mensen en vakwerk!",
-    },
-    {
-      naam: "Jamilla Belkadi",
-      datum: "mei 2023",
-      sterren: 5,
-      tekst: "Hele fijne en lieve kapster. Doet mijn haar altijd heel mooi — knippen, verven/balayage en soms feestkapsels. Ik raad Kawtar zeker aan iedereen aan!",
-    },
-    {
-      naam: "Aadi Koel",
-      datum: "augustus 2023",
-      sterren: 5,
-      tekst: "Ik kom al jaren bij deze kapster voor verven, knippen en föhnen. Ik ga altijd super tevreden de deur uit. Echt een aanrader!",
-    },
-    {
-      naam: "Khadija Elkondrouch",
-      datum: "november 2023",
-      sterren: 5,
-      tekst: "Ik ben al jaren klant bij Kaoutar, altijd erg tevreden. Erg sociaal en altijd gezellig — kom eens langs, het is zeker aan te raden!",
-    },
-    {
-      naam: "Dorine Copijn-Verlaak",
-      datum: "maart 2024",
-      sterren: 5,
-      tekst: "Ben erg tevreden! Mooi geknipt, vriendelijke mensen. Ik kom zeker terug!",
-    },
-    {
-      naam: "Onno van der Meer",
-      datum: "oktober 2023",
-      sterren: 5,
-      tekst: "Prijs-kwaliteitverhouding prima. Fijne sfeer in de salon en altijd vriendelijk geholpen.",
+      tekst: "Reviews worden binnenkort toegevoegd. Volg ons op Instagram en Facebook voor de nieuwste updates!",
     },
   ],
 
@@ -185,25 +161,25 @@ export const config = {
   // ----------------------------------------------------------
   hero: {
     achtergrondAfbeelding: "/images/hero.jpg",
-    knopTekst: "BOEK NU",
+    knopTekst: "AFSPRAAK MAKEN",
   },
 
   // ----------------------------------------------------------
   // ELFSIGHT GOOGLE REVIEWS WIDGET
   // Stap 1: Maak een gratis account op https://elfsight.com
-  // Stap 2: Maak een "Google Reviews" widget aan
+  // Stap 2: Maak een "Google Reviews" widget aan voor FirstClass Hair & Beauty
   // Stap 3: Kopieer de widget-code en plak die hieronder
   // ----------------------------------------------------------
   elfsightEmbedCode: `<!-- Plak hier je Elfsight widget-code -->
 <div class="elfsight-app-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" data-elfsight-app-lazy></div>`,
 
   // ----------------------------------------------------------
-  // KLEURENPALET
+  // KLEURENPALET — premium goud-accent voor FirstClass
   // ----------------------------------------------------------
   kleuren: {
     achtergrond:  "#ffffff",
-    tekst:        "#111111",
-    accentkleur:  "#111111",
+    tekst:        "#1a1a1a",
+    accentkleur:  "#c9a96e",
     lichtgrijs:   "#f7f6f4",
     donkergrijs:  "#555555",
   },
