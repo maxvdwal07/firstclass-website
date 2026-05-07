@@ -10,8 +10,8 @@ import { config, asset } from "../config";
 
   <div class="foto-grid fade-up">
     {
-      config.galerij.map((foto, i) => (
-        <div class={`foto-item item-${i + 1}`}>
+      config.galerij.map((foto) => (
+        <div class="foto-item">
           <img src={asset(foto.src)} alt={foto.alt} loading="lazy" />
         </div>
       ))
@@ -49,24 +49,15 @@ import { config, asset } from "../config";
   .foto-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 4rem;
-  }
-
-  /* Eerste foto iets groter voor visueel accent */
-  .foto-item.item-1 {
-    grid-column: span 2;
   }
 
   .foto-item {
     overflow: hidden;
     background-color: var(--grijs-licht);
-    aspect-ratio: 4 / 3;
-  }
-
-  .foto-item.item-1 {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1;
+    max-height: 400px;
   }
 
   .foto-item img {
@@ -99,20 +90,9 @@ import { config, asset } from "../config";
     color: #ffffff;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     .foto-grid {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    .foto-item.item-1 {
-      grid-column: span 2;
-      aspect-ratio: 16 / 9;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .foto-grid {
-      grid-template-columns: 1fr 1fr;
       gap: 4px;
     }
   }
